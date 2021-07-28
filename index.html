@@ -10,70 +10,88 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Vidaloka&display=swap" rel="stylesheet">
 </head>
 <style>
-    h1{
-        font-family: 'Vidaloka', serif;
-        font-size: min(20vw,5em);
-        letter-spacing: 2px;
-        margin:.3em;
-        color:rgb(70, 49, 40);
-    }
-    p{
-        font-family: 'Roboto', sans-serif;
-        font-size: min(5vw,1.5em);
-        color:rgb(70, 49, 40);
-    }
-    body{
-        background-color: rgb(248, 238, 209);
-        margin:0px;
-        
-    }
-    .center{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        height:100vh;
+    svg{
+        width: 100%;
         text-align: center;
     }
-    .leaf{
-        position:relative;
-        width:auto;
-        max-width: 500px;
-        height:70vh;
-        
+    #natSvgBig{
+        font-family: 'Vidaloka', serif;
+        color:rgb(70, 49, 40);
+        text-shadow: .3em .3em  rgba(214,198,133,1);
     }
-    #leaves{
-        height:100vh;
-        width:100vw;
-        position: absolute;
+   
+    #subSvgSmall{
+        font-family: serif;
+        color:rgb(70, 49, 40);
+        text-align:center;
+        font-size: 40%;
+    }
+    #center{
         display:flex;
-        justify-content: center;
         align-items: center;
-        top:0px;
-        left:0px;
-        z-index: -1;
+        justify-content: center;
+        height: 100vh;
+    }
+    #text{
+
+        z-index: 2;
+        margin:10vw;
+        max-width: 700px;
+        height:auto;
+        /* display:flex;
+        flex-direction: column;
+        align-items: center; */
+    }
+    body,html {
+        background-color: rgb(248, 238, 209);
+        margin:0px;
+        height:100%;
+    }
+    body{
         overflow: hidden;
     }
+
+    .leaf{
+        width:40vw;
+        max-width: 500px;
+        min-width: 300px;
+    }
+    #leaves{
+        height:100%; 
+        width: 100%;
+        overflow:hidden;
+        top:0px;
+        left:0px;
+        position: absolute;
+
+        z-index: 1;
+    }
     #leaf1{
-        right:calc((100vw / 3));
-        bottom:calc((100vh / 3));
-        transform: rotate(20deg);
+        position: absolute;
+        top:-10vh; left:-10vw;
+        transform: rotate(25deg);
+        
     }
     #leaf2{
-        transform: rotate(60deg);
-        left:calc((100vw / 4));
-        top:calc((100vh / 3));
+        transform: rotate(55deg);
+        position: absolute;
+        bottom:-30vh; right:-15vw;
     }
 </style>
 <body>
-<div class = 'center'>
-    <div>
-    <h1>natalie dayvault</h1>
-    <p>more website coming soon</p>
-</div>
-</div>
-<div id= "leaves">
-<img id = "leaf1" class = "leaf" src="wipImages/leaf1.png" alt="Leaf">
-<img id = "leaf2" class = "leaf" src="wipImages/leaf2.png" alt="Leaf">
-</div>
+    <div id = 'center'>
+        <div id = 'text'>
+            <svg id= 'natSvg' viewBox="0 0 110 20">
+                <text text-anchor="middle" id = "natSvgBig" x="55" y="15">natalie dayvault</text>
+            </svg>
+            <svg id= 'subSvg' viewBox="0 0 110 10">
+                <text  text-anchor="middle" id = "subSvgSmall" x="55" y="6">work in progress</text>
+            </svg>
+        </div>
+    </div>
+    <div id= "leaves">
+        <img id = "leaf1" class = "leaf" src="wipImages/leaf1.png" alt="Leaf">
+        <img id = "leaf2" class = "leaf" src="wipImages/leaf2.png" alt="Leaf">
+    </div>
 </body>
 </html>
